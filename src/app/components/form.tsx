@@ -1,6 +1,7 @@
 'use client'
-import { useRouter } from 'next/navigation';
+import {redirect, useRouter} from 'next/navigation';
 import React, { useState } from 'react';
+
 
 function Form() {
     const [inputValue, setInputValue] = useState<string>('');
@@ -18,7 +19,8 @@ function Form() {
             console.log(inputValue);
             setInputValue('');
 
-            router.push('https://muj.acm.org/#/x');
+            // router.push('https://muj.acm.org/#/x');
+            redirect("../pages/page1")
         } else {
             // Handle authentication error or show a message
             console.log('Authentication failed');
